@@ -21,5 +21,8 @@ export class AppComponent implements OnInit {
   setCurrentUser() {
     const user: User = JSON.parse(localStorage.getItem('user'));
     this.accountService.setCurrentUser(user);
+    //const jwtToken = JSON.parse(atob(user.token.split('.')[1]));
+    //const expires = new Date(jwtToken.exp * 1000);
+    //if (expires.toDateString() > Date.now().toString()) localStorage.removeItem('user');
   }
 }
